@@ -1,6 +1,22 @@
-type ExampleEntity @entity {
+type User @entity {
   id: ID!
-  count: BigInt!
-  owner: Bytes! # address
-  spender: Bytes! # address
+  balance: BigInt!
+}
+
+type ApprovalRequest @entity {
+  id: ID!
+  owner: Bytes!
+  spender: Bytes!
+  value: BigInt!
+  timestamp: BigInt!
+  block: BigInt!
+}
+
+type TransferRequest @entity {
+  id: ID!
+  from: Bytes!
+  to: Bytes!
+  value: BigInt!
+  timestamp: BigInt!
+  block: BigInt!
 }
